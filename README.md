@@ -4,7 +4,18 @@ Recruitment task
 ## Video
 The video shows how the application works in practice
 
-[Watch wideo](https://youtu.be/XkmAaP16a20)
+[Watch video](https://youtu.be/XkmAaP16a20)
+
+## Quick Overview
+Cards are drawn from the Deck into the hand.
+
+Use the mouse to drag a card from your hand.
+
+Drop a card over the table to put it there.
+
+Press the "End the turn" button to end your turn.
+
+The game ends when there are no more cards to play.
 
 ## Task
 ### Task flow
@@ -24,3 +35,64 @@ The video shows how the application works in practice
 - ✅ Animations for playing cards
 - ✅ After dropping a card (but not playing it), the card should return to its last position in hand
 - ✅ Highlight the currently selected card (e.g., show a frame/animate the card when hovered over)
+
+## Project
+### Project Structure
+```
+1 - MyAssets
+├── Code
+│   ├── Animation
+│   │   ├── MoveCardAnimation.cs
+│   │   └── SelectCardAnimation.cs
+│   ├── Interfaces
+│   │   ├── ICardAnimation.cs
+│   │   ├── IDisplayInfo.cs
+│   │   ├── IGameState.cs
+│   │   └── IProduct.cs
+│   ├── ScriptableObjects
+│   │   └── CardCollection.cs
+│   └── Scripts
+│   │   ├── CardSystem
+│   │   │   ├── Card.cs
+│   │   │   ├── CardAnimator.cs
+│   │   │   ├── CardsContainer.cs
+│   │   │   ├── Deck.cs
+│   │   │   ├── DiscardPile.cs
+│   │   │   ├── Hand.cs
+│   │   │   └── Table.cs
+│   │   ├── GameLogic
+│   │   │   ├── Game States Folder
+│   │   │   │   ├── GameStateDrawPhase.cs
+│   │   │   │   ├── GameStateEndGame.cs
+│   │   │   │   ├── GameStatePlayerTurn.cs
+│   │   │   │   └── GameStateStartGame.cs
+│   │   │   └── TestManager.cs
+│   │   ├── UI
+│   │   │   └── EndTurnBtnScript.cs
+│   │   └── Draggable.cs
+├── Data
+│   └── DefaultCardCollection.asset
+├── Prefabs
+│   ├── Cards
+│   │   ├── CardPrefab_Activate.prefab
+│   │   ├── CardPrefab_All out attack.prefab
+│   │   ├── CardPrefab_Attack.prefab
+│   │   ├── CardPrefab_Double Attack.prefab
+│   │   ├── CardPrefab_Hard Skin.prefab
+│   │   ├── CardPrefab_Shield up.prefab
+│   │   └── CardPrefab_Sub-zero.prefab
+│   ├── UI
+│   │   ├── Deck Attack.prefab
+│   │   ├── Discard pile Skin.prefab
+│   │   ├── Hand up.prefab
+│   │   └── Table-zero.prefab
+│   └── CardPrefab.prefab
+├── Scenes
+│   └── TestScene.unity
+└── Settings
+```
+### To Be continued
+WIP
+## Used
+- [DOTween (HOTween v2)](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
+- Images of the cards provided to me (not available in the repository)
