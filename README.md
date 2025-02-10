@@ -7,15 +7,11 @@ The video shows how the application works in practice
 [Watch video](https://youtu.be/XkmAaP16a20)
 
 ## Quick Overview
-Cards are drawn from the Deck into the hand.
-
-Use the mouse to drag a card from your hand.
-
-Drop a card over the table to put it there.
-
-Press the "End the turn" button to end your turn.
-
-The game ends when there are no more cards to play.
+Cards are drawn from the Deck into the hand.<br>
+Use the mouse to drag a card from your hand.<br>
+Drop a card over the table to put it there.<br>
+Press the "End the turn" button to end your turn.<br>
+The game ends when there are no more cards to play.<br>
 
 ## Task
 ### Task flow
@@ -91,8 +87,26 @@ The game ends when there are no more cards to play.
 │   └── TestScene.unity
 └── Settings
 ```
-### To Be continued
-WIP
+### How It Works
+The task takes place in a scene called `TestScene`.<br>
+The `TestManager` initializes the first game state, `GameStateStartGame`.<br>
+The basic set of cards is loaded, and the deck is shuffled.<br>
+The hand draws cards. The `Hand` script defines a fixed limit for the number of cards a hand can hold. It only draws as many cards as there is space for.<br>
+Once this process is complete, the game enters the GameStatePlayerTurn state.<br>
+#### Player Turn
+In this state, the player has full control. They can use the mouse to interact with the cards or end their turn by pressing the "End the turn" button.<br>
+Hovering over a card triggers an animation controlled by `CardAnimator`. The card is highlighted and begins to move up and down.<br>
+Each card has a `Draggable` script, which allows it to be moved with the mouse and handles drag logic.<br>
+Moving a card over another card swaps their positions in the hand.<br>
+Dropping a card outside of valid areas returns it to the hand.<br>
+Dropping a card on the table moves it there. The `Table` script automatically transfers played cards to the discard pile.<br>
+The `DiscardPile` keeps track of discarded cards and removes them from the scene.<br>
+#### Turn End & Game Flow
+A player's turn ends when they use all available cards or press the "End the turn" button.<br>
+The game then transitions to the `GameStateDrawPhase`, where new cards are drawn into the player's hand.<br>
+If the player still has playable cards, the game returns to `GameStatePlayerTurn`. Otherwise, it proceeds to `GameStateEndGame`.<br>
+In `GameStateEndGame`, the game simply ends, and no further actions are available.<br>
+
 ## Used
 - [DOTween (HOTween v2)](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
 - Images of the cards provided to me (not available in the repository)
