@@ -108,5 +108,6 @@ If the player still has playable cards, the game returns to `GameStatePlayerTurn
 In `GameStateEndGame`, the game simply ends, and no further actions are available.<br>
 
 ## Used
+- Unity (version 6000.0.26f1)
 - [DOTween (HOTween v2)](https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676)
 - Images of the cards provided to me (not available in the repository)
