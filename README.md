@@ -1,6 +1,6 @@
 # Card management system 🃏
 
-> **A core framework for Trading Card Games (TCG) featuring a Finite State Machine (FSM) architecture, drag & drop mechanics, and DOTween animations.**
+> **A technical implementation of Trading Card Game (TCG) mechanics featuring a Finite State Machine (FSM) architecture, drag & drop logic, and DOTween animations.**
 
 ---
 
@@ -46,7 +46,7 @@ The code relies on interfaces to decouple systems, making the project easy to ex
 * `IDisplayInfo`: Ensures UI elements display data uniformly.
 
 #### 🗃️ Data management (ScriptableObjects)
-Card data is strictly separated from logic using **ScriptableObjects** (`CardCollection`). This allows designers to balance the game and add new cards via the Inspector without touching the codebase.
+Card data is strictly separated from logic using **ScriptableObjects** (`CardCollection`). This allows designers to balance the game and add new cards via the inspector without touching the codebase.
 
 #### 🎨 Procedural animations (DOTween)
 Instead of static transitions, the project uses **DOTween** for fluid visuals:
@@ -54,7 +54,7 @@ Instead of static transitions, the project uses **DOTween** for fluid visuals:
 * **Movement:** Smooth transitions when drawing cards or returning them to hand (`MoveCardAnimation.cs`).
 
 ### 🕹️ Controls
-* **Drag & drop:** Move cards from Hand to table to play them.
+* **Drag & drop:** Move cards from hand to table to play them.
 * **Drag in hand:** Reorder cards within your hand.
 * **End turn button:** Manually finish the current turn.
 
